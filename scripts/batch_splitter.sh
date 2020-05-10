@@ -23,4 +23,4 @@ for num in $COLLECT; do
 done
 
 # Slow for demo
-sleep 10
+#sleep 10
