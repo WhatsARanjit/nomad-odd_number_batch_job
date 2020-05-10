@@ -1,14 +1,15 @@
 job "test" {
   meta {
-    batch_size = 10
+    batch_size = 20
   }
 
   reschedule {
-    attempts       = 0
-    delay          = "15s"
+    attempts       = 1000
+    interval       = "1h23m20s"
+    delay          = "5s"
     delay_function = "constant"
-    max_delay      = "1h"
-    unlimited      = true
+    max_delay      = "30s"
+    unlimited      = false
   }
 
   datacenters = ["dc1"]
@@ -20,10 +21,17 @@ job "test" {
   }
   
   group "batch_group" {
-    count = 75
+    count = 60
 
     task "test_task" {
       driver = "raw_exec"
+
+      restart {
+        interval = "15s"
+        attempts = 60
+        delay    = "15s"
+        mode     = "fail"
+      }
 
       artifact {
         source = "https://raw.githubusercontent.com/WhatsARanjit/nomad-odd_number_batch_job/master/scripts/batch_splitter.sh"
