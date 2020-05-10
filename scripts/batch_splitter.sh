@@ -1,9 +1,10 @@
 #!/bin/bash
 
 # Set indexes
-START=$(($1+1))
+START_INDEX=$(($1))
 SIZE=$2
-END=$(($START+$SIZE-1))
+START=$(($START_INDEX*$SIZE+1))
+END=$(($START+$SIZE))
 
 # Collect numbers
 COLLECT=$(curl -s https://raw.githubusercontent.com/WhatsARanjit/nomad-odd_number_batch_job/master/numbers/numbers.txt | sed "$START,$END !d")
