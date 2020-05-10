@@ -26,13 +26,6 @@ job "test" {
     task "test_task" {
       driver = "raw_exec"
 
-      restart {
-        interval = "15s"
-        attempts = 60
-        delay    = "15s"
-        mode     = "fail"
-      }
-
       artifact {
         source = "https://raw.githubusercontent.com/WhatsARanjit/nomad-odd_number_batch_job/master/scripts/batch_splitter.sh"
       }
