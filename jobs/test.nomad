@@ -26,7 +26,7 @@ job "test" {
       driver = "raw_exec"
 
       artifact {
-        source = "https://gist.githubusercontent.com/WhatsARanjit/ed1bea889e816adbfae770f68d2e20a6/raw/7cbe994adc806bb19e2510e2668fefa1f4ddd1d1/batch_splitter.sh"
+        source = "https://raw.githubusercontent.com/WhatsARanjit/nomad-odd_number_batch_job/master/scripts/batch_splitter.sh"
       }
 
       config {
