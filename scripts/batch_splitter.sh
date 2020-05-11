@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 set -e
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
