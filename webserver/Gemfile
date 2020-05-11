@@ -1,0 +1,9 @@
+source 'https://rubygems.org'
+
+# Core
+gem 'sinatra', '2.0.2'
+
+group :development do
+  gem 'pry', '0.11.3'
+  gem 'rubocop', '~> 0.51.0'
+end

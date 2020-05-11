@@ -1,0 +1,11 @@
+*.old
+.*.swp
+.bundle
+.sass-cache
+.vagrant/
+Gemfile.local
+Gemfile.lock
+vendor/
+Dockerfile
+.rubocop.yml
+.git

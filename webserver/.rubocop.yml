@@ -1,0 +1,20 @@
+AllCops:
+  TargetRubyVersion: 2.3.7
+  Include:
+    - '*.rb'
+  Exclude:
+    - '.**'
+    - 'vendor/**/*'
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Lint/Void:
+  Enabled: false
+Layout/SpaceAroundOperators:
+  Enabled: false
+Layout/ExtraSpacing:
+  Enabled: false

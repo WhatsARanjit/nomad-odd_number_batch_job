@@ -1,0 +1,7 @@
+*.old
+.*.swp
+.bundle
+.vagrant/
+Gemfile.local
+vendor/
+results.txt
