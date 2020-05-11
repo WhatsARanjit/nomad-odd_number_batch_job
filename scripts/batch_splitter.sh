@@ -29,7 +29,7 @@ for num in $COLLECT; do
 done
 
 # Slow for demo
-sleep 1
+sleep 5
 
 # Trim and fixup payload
 RESULT=${RESULT%??}
