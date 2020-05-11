@@ -1,14 +1,14 @@
 job "test" {
   meta {
-    batch_size = 20
+    batch_size = 10
   }
 
   reschedule {
-    attempts       = 1000
-    interval       = "1h23m20s"
-    delay          = "5s"
+    attempts       = 5
+    interval       = "3m30s"
+    delay          = "30s"
     delay_function = "constant"
-    max_delay      = "30s"
+    max_delay      = "15m"
     unlimited      = false
   }
 
@@ -17,11 +17,11 @@ job "test" {
 
   constraint {
     attribute = "${attr.kernel.name}"
-    value = "darwin"
+    value = "linux"
   }
   
   group "batch_group" {
-    count = 60
+    count = 10
 
     task "test_task" {
       driver = "raw_exec"

@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 set -e
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
@@ -35,5 +35,8 @@ sleep 1
 RESULT=${RESULT%??}
 RESULT=$(echo -e $RESULT)
 
+# Lookup Collector address
+COLLECTOR_ADDR=$(dig @localhost -p8600 +short collector.service.consul)
+
 # Submit payload
-curl -v -d "$RESULT" "${COLLECTOR_ADDR}/api"
+curl -d "$RESULT" "${COLLECTOR_ADDR}/api"
