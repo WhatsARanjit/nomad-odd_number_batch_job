@@ -37,6 +37,7 @@ RESULT=$(echo -e $RESULT)
 
 # Lookup Collector address
 COLLECTOR_ADDR=$(dig @localhost -p8600 +short collector.service.consul)
+echo "Collector address: ${COLLECTOR_ADDR}"
 
 # Submit payload
-curl -d "$RESULT" "${COLLECTOR_ADDR}:4567/api"
+curl -S -d "$RESULT" "${COLLECTOR_ADDR}:4567/api"

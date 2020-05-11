@@ -28,6 +28,9 @@ job "test" {
 
       artifact {
         source = "https://raw.githubusercontent.com/WhatsARanjit/nomad-odd_number_batch_job/master/scripts/batch_splitter.sh"
+        options {
+          checksum = "sha256:cc1d52284bf2df69c29f662235fb00f9995c2f92fd736ff46e5911904271f544"
+        }
       }
 
       config {
