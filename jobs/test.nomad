@@ -21,7 +21,7 @@ job "test" {
   }
   
   group "batch_group" {
-    count = 10
+    count = 5
 
     task "test_task" {
       driver = "raw_exec"
@@ -29,7 +29,7 @@ job "test" {
       artifact {
         source = "https://raw.githubusercontent.com/WhatsARanjit/nomad-odd_number_batch_job/master/scripts/batch_splitter.sh"
         options {
-          checksum = "sha256:cc1d52284bf2df69c29f662235fb00f9995c2f92fd736ff46e5911904271f544"
+          checksum = "sha256:9970d0e61d232c1f7cbf13f91759b357c9a5250de3d89de6d04c34018a09a9d0"
         }
       }
 

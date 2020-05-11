@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 set -e
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
@@ -40,4 +40,4 @@ COLLECTOR_ADDR=$(dig @localhost -p8600 +short collector.service.consul)
 echo "Collector address: ${COLLECTOR_ADDR}"
 
 # Submit payload
-curl -S -d "$RESULT" "${COLLECTOR_ADDR}:4567/api"
+curl -v -d "$RESULT" "${COLLECTOR_ADDR}:4567/api"
