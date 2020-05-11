@@ -32,4 +32,4 @@ RESULT=${RESULT%??}
 RESULT=$(echo -e $RESULT)
 
 # Submit payload
-curl -s -d "$RESULT" "${COLLECTOR_ADDR}/api"
+curl -v -d "$RESULT" "${COLLECTOR_ADDR}/api"
