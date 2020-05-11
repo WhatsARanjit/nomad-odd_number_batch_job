@@ -39,4 +39,4 @@ RESULT=$(echo -e $RESULT)
 COLLECTOR_ADDR=$(dig @localhost -p8600 +short collector.service.consul)
 
 # Submit payload
-curl -d "$RESULT" "${COLLECTOR_ADDR}/api"
+curl -d "$RESULT" "${COLLECTOR_ADDR}:4567/api"
