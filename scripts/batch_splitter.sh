@@ -16,11 +16,20 @@ if [ -z "$COLLECT" ]; then
 fi
 
 # Filter for odd numbers
+RESULT=""
 for num in $COLLECT; do
   if (( $num % 2 )); then
-    echo $num
+    #echo $num
+    RESULT="${RESULT}${num}\n"
   fi
 done
 
 # Slow for demo
 sleep 1
+
+# Trim and fixup payload
+RESULT=${RESULT%??}
+RESULT=$(echo -e $RESULT)
+
+# Submit payload
+curl -s -d "$RESULT" "${COLLECTOR_ADDR}/api"
