@@ -1,4 +1,4 @@
-job "test" {
+job "odd" {
   parameterized {
   payload       = "optional"
   meta_optional = ["batch_size"]
@@ -34,7 +34,7 @@ job "test" {
       artifact {
         source = "https://raw.githubusercontent.com/WhatsARanjit/nomad-odd_number_batch_job/master/scripts/batch_splitter.sh"
         options {
-          checksum = "sha256:9f9016e20a0c9ea3b02ac9369e97897ecb03f76e501b602a882050f4c691595f"
+          checksum = "sha256:fe385b108e93cc31f51cdb0143b66e627c15cf729cff4de967bff9b23fb86e69"
         }
       }
 
