@@ -18,8 +18,7 @@ job "collector" {
         value     = "windows"
       }
       config {
-        image        = "whatsaranjit/collector:0.1.0"
-        #network_mode = "host"
+        image = "whatsaranjit/collector:0.1.0"
         port_map {
           http = 4567
         }

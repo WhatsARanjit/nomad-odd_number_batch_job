@@ -1,11 +1,12 @@
 job "odd" {
   parameterized {
-  payload       = "optional"
-  meta_optional = ["batch_size"]
+    payload       = "optional"
+    meta_optional = ["batch_size", "sleep"]
   }
 
   meta {
     batch_size = 100
+    sleep      = 1
   }
 
   reschedule {
@@ -18,11 +19,11 @@ job "odd" {
   }
 
   datacenters = ["dc1"]
-  type = "batch"
+  type        = "batch"
 
   constraint {
     attribute = "${attr.kernel.name}"
-    value = "linux"
+    value     = "linux"
   }
   
   group "batch_group" {
@@ -34,13 +35,13 @@ job "odd" {
       artifact {
         source = "https://raw.githubusercontent.com/WhatsARanjit/nomad-odd_number_batch_job/master/scripts/batch_splitter.sh"
         options {
-          checksum = "sha256:fe385b108e93cc31f51cdb0143b66e627c15cf729cff4de967bff9b23fb86e69"
+          checksum = "sha256:2e2aac5ecd533e5cc87c9ab797dc415373685f8e7985edb5fa93598ce57c7ddb"
         }
       }
 
       config {
         command = "batch_splitter.sh"
-        args    = ["${NOMAD_ALLOC_INDEX}", "${NOMAD_META_batch_size}"]
+        args    = ["${NOMAD_ALLOC_INDEX}", "${NOMAD_META_batch_size}", "${NOMAD_META_sleep}"]
       }
 
       logs {
