@@ -26,7 +26,7 @@ job "odd" {
   }
   
   group "batch_group" {
-    count = 600
+    count = 800
 
     task "test_task" {
       driver = "raw_exec"
